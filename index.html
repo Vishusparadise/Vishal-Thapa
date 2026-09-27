@@ -445,8 +445,9 @@ footer{border-top:1px solid var(--line); padding:44px 0; background:var(--surfac
     female.addEventListener('change', function(){ if (female.checked) male.checked = false; });
   }
 
-  // Send the contact form to WhatsApp with the details pre-filled.
-  var form = document.getElementById('contactForm');
+ <script>
+const form = document.getElementById('contactForm');
+
 if (form) {
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -471,26 +472,14 @@ if (form) {
         throw new Error('Form submission failed');
       }
 
-      const first = document.getElementById('firstName').value.trim();
-      const last = document.getElementById('lastName').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const mobile = document.getElementById('mobile').value.trim();
-
-      const msg =
-        "Hi Vishal, I'd like to get in touch about digital marketing services.\n" +
-        "Name: " + first + " " + last + "\n" +
-        "Email: " + email + "\n" +
-        "Mobile: " + mobile;
-
-    
-
       form.reset();
+      alert('Thank you! Your enquiry has been submitted successfully.');
+      
     } catch (error) {
       alert('Something went wrong. Please try again.');
     }
   });
 }
-})();
 </script>
 </body>
 </html>
